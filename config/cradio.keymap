@@ -9,8 +9,18 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 //#include <dt-bindings/zmk/mouse.h>
-//#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/ext_power.h>
 #include "keys_de.h"
+/*
+&mmv {    
+        time-to-max-speed-ms = <1000>;
+        acceleration-exponent=<1>;
+};
+&mwh {    
+        time-to-max-speed-ms = <1000>;
+        acceleration-exponent=<1>;
+}; 
+*/
 #define XXX &none
 #define ___ &trans
 
@@ -25,6 +35,86 @@
 
 
 / {
+  ZMK_MACRO(m_a,
+        wait-ms = <0>;
+        tap-ms = <20>;
+        bindings = <&kp A>;
+    )
+    ZMK_MACRO(m_r,
+        wait-ms = <0>;
+        tap-ms = <20>;
+        bindings = <&kp R>;
+    )
+    ZMK_MACRO(m_w,
+        wait-ms = <0>;
+        tap-ms = <20>;
+        bindings = <&kp W>;
+    )
+    ZMK_MACRO(m_f,
+        wait-ms = <0>;
+        tap-ms = <20>;
+        bindings = <&kp F>;
+    )
+    ZMK_MACRO(m_s,
+        wait-ms = <0>;
+        tap-ms = <20>;
+        bindings = <&kp S>;
+    )
+    ZMK_MACRO(m_t,
+        wait-ms = <0>;
+        tap-ms = <20>;
+        bindings = <&kp T>;
+    )
+    ZMK_MACRO(m_x,
+        wait-ms = <0>;
+        tap-ms = <20>;
+        bindings = <&kp X>;
+    )
+    ZMK_MACRO(m_d,
+        wait-ms = <0>;
+        tap-ms = <20>;
+        bindings = <&kp D>;
+    )
+    ZMK_MACRO(m_v,
+        wait-ms = <0>;
+        tap-ms = <20>;
+        bindings = <&kp V>;
+    )
+    ZMK_MACRO(m_g,
+        wait-ms = <0>;
+        tap-ms = <20>;
+        bindings = <&kp G>;
+    )
+    ZMK_MACRO(m_h,
+        wait-ms = <0>;
+        tap-ms = <20>;
+        bindings = <&kp H>;
+    )
+    ZMK_MACRO(m_n,
+        wait-ms = <0>;
+        tap-ms = <20>;
+        bindings = <&kp N>;
+    )
+    ZMK_MACRO(m_e,
+        wait-ms = <0>;
+        tap-ms = <20>;
+        bindings = <&kp E>;
+    )
+    ZMK_MACRO(m_i,
+        wait-ms = <0>;
+        tap-ms = <20>;
+        bindings = <&kp I>;
+    )
+    ZMK_MACRO(m_o,
+        wait-ms = <0>;
+        tap-ms = <20>;
+        bindings = <&kp O>;
+    )
+    ZMK_MACRO(m_z,
+        wait-ms = <0>;
+        tap-ms = <20>;
+        bindings = <&kp Z>;
+    )
 
 
 macros {
