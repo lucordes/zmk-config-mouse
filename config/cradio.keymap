@@ -166,7 +166,7 @@ macros {
         #binding-cells = <0>;
         wait-ms = <0>;
         tap-ms = <1>;
-        bindings = <&kp CAPS &kp S &kp CAPS &kp C >;
+        bindings = <&kp LS(S) &kp C >;
     };
     bracket: bracket {
         compatible = "zmk,behavior-macro";
@@ -477,7 +477,7 @@ hm: homerow_mods {
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                  ___        &kp HOME      &kp PG_DN      &kp END         ___          &kp C_BRI_UP &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT   ___
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                 ___           ___         &kp DEL     &kp C_VOL_DN  &kp C_VOL_UP      &kp C_BRI_DN    &kp F24       &kp F23      &mwh SCROLL_UP &mwh SCROLL_UP
+                 ___           ___         &kp DEL     &kp C_VOL_DN  &kp C_VOL_UP      &kp C_BRI_DN    &kp F24       &kp F23      &mwh SCROLL_UP &mwh SCROLL_DOWN
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
                                                            ___           ___               ___           ___
         //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
