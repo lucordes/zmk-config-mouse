@@ -11,6 +11,8 @@
 //#include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include "keys_de.h"
+/*
+
 &mmv {    
         time-to-max-speed-ms = <1000>;
         acceleration-exponent=<1>;
@@ -19,7 +21,7 @@
         time-to-max-speed-ms = <1000>;
         acceleration-exponent=<1>;
 }; 
-
+*/
 #define XXX &none
 #define ___ &trans
 
