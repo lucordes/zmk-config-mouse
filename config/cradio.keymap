@@ -20,7 +20,7 @@
         time-to-max-speed-ms = <1000>;
         acceleration-exponent=<1>;
 }; 
-
+#define MOUSE_MAX 2500
 #define XXX &none
 #define ___ &trans
 
@@ -448,11 +448,11 @@ hm: homerow_mods {
     nav_layer {
       bindings = <
         // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-             &mo ADJ      &kp C_PREV     &kp PG_UP      &kp C_NEXT   &kp C_PAUSE            ___      &mkp LCLK  &mmv MOVE_VERT(-2500)   &mkp RCLK   &mkp MCLK
+             &mo ADJ      &kp C_PREV     &kp PG_UP      &kp C_NEXT   &kp C_PAUSE            ___      &mkp LCLK  &mmv MOVE_VERT(-MOUSE_MAX)   &mkp RCLK   &mkp MCLK
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                 ___        &kp HOME      &kp PG_DN      &kp END         ___          &kp C_BRI_UP &mmv MOVE_HOR(-2500) &mmv MOVE_VERT(2500) &mmv MOVE_HOR(2500)   ___
+                 ___        &kp HOME      &kp PG_DN      &kp END         ___          &kp C_BRI_UP &mmv MOVE_HOR(-MOUSE_MAX) &mmv MOVE_VERT(MOUSE_MAX) &mmv MOVE_HOR(MOUSE_MAX)   ___
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                 ___           ___         &kp DEL     &kp C_VOL_DN  &kp C_VOL_UP      &kp C_BRI_DN    &kp F24       &kp F23      &mwh SCROLL_UP &mwh SCROLL_DOWN
+                 ___           ___         &kp DEL     &kp C_VOL_DN  &kp C_VOL_UP      &kp C_BRI_DN    &kp F24       &kp F23      &mwh SCROLL_VERT(MOUSE_MAX) &mwh SCROLL_VERT(-MOUSE_MAX)
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
                                                            ___           ___               ___           ___
         //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
