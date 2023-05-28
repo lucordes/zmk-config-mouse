@@ -10,4 +10,4 @@ manifest:
       revision: main-3.2
       import: app/west.yml
   self:
-    path: config 
+    path: config
