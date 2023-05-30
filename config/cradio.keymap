@@ -277,8 +277,9 @@ hma: homerow_modsa {
             label = "HOMEROW_MODSa";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
+            global-quick-tap;
             flavor = "tap-preferred";
-            bindings = <&kp>, <>;
+            bindings = <&kp>, <&m_a>;
         };
 hmr: homerow_modsr {
             compatible = "zmk,behavior-hold-tap";
@@ -359,7 +360,7 @@ hm: homerow_mods {
         // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
                  &kp Q      &hm ESC W    &hm LSHIFT F    &kp P         &kp B             &kp J          &kp L        &kp U      &hm ESC Z    &kp LC(BSPC)
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-            &hma LCTRL m_a &hmr LGUI R   &hms RET S   &hmt LALT T   &hm MINUS G         &kp M     &hmn RSHFT N  &hme LALT E   &hmi LGUI I   &hmo RCTRL O
+            &hma LCTRL A &hmr LGUI R   &hms RET S   &hmt LALT T   &hm MINUS G         &kp M     &hmn RSHFT N  &hme LALT E   &hmi LGUI I   &hmo RCTRL O
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              &lt NUMPAD Y  &hm LALT X      &kp C      &hm LCTRL D  &hm LA(F4) V        &kp K       &hm RALT H    &kp COMMA     &kp DOT     &kp LS(MINUS)
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
