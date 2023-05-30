@@ -286,6 +286,7 @@ hmr: homerow_modsr {
             label = "HOMEROW_MODSr";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
+            global-quick-tap;
             flavor = "tap-preferred";
             bindings = <&kp>, <&m_r>;
         };
@@ -295,6 +296,7 @@ hms: homerow_modss {
             label = "HOMEROW_MODSs";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
+            global-quick-tap;
             flavor = "tap-preferred";
             bindings = <&kp>, <&m_s>;
         };
@@ -303,6 +305,7 @@ hmt: homerow_modst {
             label = "HOMEROW_MODSt";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
+            global-quick-tap;
             flavor = "tap-preferred";
             bindings = <&kp>, <&m_t>;
         };
@@ -312,6 +315,7 @@ hmn: homerow_modsn {
             label = "HOMEROW_MODSn";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
+            global-quick-tap;
             flavor = "tap-preferred";
             bindings = <&kp>, <&m_n>;
         };
@@ -320,6 +324,7 @@ hme: homerow_modse {
             label = "HOMEROW_MODSe";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
+            global-quick-tap;
             flavor = "tap-preferred";
             bindings = <&kp>, <&m_e>;
         };    
@@ -328,6 +333,7 @@ hmi: homerow_modsi {
             label = "HOMEROW_MODSi";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
+            global-quick-tap;
             flavor = "tap-preferred";
             bindings = <&kp>, <&m_i>;
         };
@@ -336,6 +342,7 @@ hmo: homerow_modso {
             label = "HOMEROW_MODSo";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
+            global-quick-tap;
             flavor = "tap-preferred";
             bindings = <&kp>, <&m_o>;
         };
@@ -346,6 +353,7 @@ hm: homerow_mods {
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
+            global-quick-tap;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
