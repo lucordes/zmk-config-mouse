@@ -261,7 +261,7 @@ combos {
             key-positions = <13 23>;
             bindings = <&kp LC(LA(A))>;
         };
-        combo_winvindleft {
+        combo_winvindright {
             timeout-ms = <25>;
             key-positions = <16 26>;
             bindings = <&kp LC(LA(O))>;
