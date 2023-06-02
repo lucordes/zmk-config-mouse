@@ -256,6 +256,11 @@ combos {
             key-positions = <2 3>;
             bindings = <&kp C_AC_FORWARD>;
         };
+        combo_winvind {
+            timeout-ms = <25>;
+            key-positions = <2 3>;
+            bindings = <&kp LC(LA)>;
+        };
 
 
     };
