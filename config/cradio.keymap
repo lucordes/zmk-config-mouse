@@ -363,7 +363,6 @@ hm: homerow_mods {
             #binding-cells = <2>;
             tapping-term-ms = <300>;
             global-quick-tap;
-            tap-ms = <20>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
