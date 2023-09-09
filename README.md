@@ -2,9 +2,11 @@
 
 
 
+
 <div align="center">
 
-![keymap](https://github.com/lucordes/zmk-config-nomouse/assets/31887821/545e8870-38d7-42cb-abc3-bbaa9cd32972)
+![keymap](https://github.com/lucordes/zmk-config-mouse/assets/31887821/d457206b-73e8-4b4e-86a0-5c9ee819ebcb)
+
 
 </div>
 
