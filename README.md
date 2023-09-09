@@ -1,6 +1,6 @@
-# zmk-config-nomouse
+# my zmk-config
 
-
+If you want to know more about my shortcut configuration read [here](https://www.lucacordes.xyz/keyboards-and-shortcuts/#shortcuts).
 
 
 <div align="center">
