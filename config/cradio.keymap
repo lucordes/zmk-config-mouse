@@ -11,6 +11,7 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include "keys_de.h"
+#include "../zmk-nodefree-config/helper.h"
 #define TAPPING_TIME 25
 &mmv {    
         time-to-max-speed-ms = <1000>;
@@ -56,115 +57,7 @@
 #define ADJ 4
 
 
-&kscan0 {
-    debounce-press-ms = <3>;
-    debounce-release-ms = <3>;
-};
-
-
-/ {
-  ZMK_MACRO(m_a,
-        wait-ms = <0>;
-        tap-ms = <TAPPING_TIME>;
-        bindings = <&kp A>;
-    )
-    ZMK_MACRO(m_r,
-        wait-ms = <0>;
-        tap-ms = <TAPPING_TIME>;
-        bindings = <&kp R>;
-    )
-    ZMK_MACRO(m_s,
-        wait-ms = <0>;
-        tap-ms = <TAPPING_TIME>;
-        bindings = <&kp S>;
-    )
-    ZMK_MACRO(m_t,
-        wait-ms = <0>;
-        tap-ms = <TAPPING_TIME>;
-        bindings = <&kp T>;
-    )
-   
-    ZMK_MACRO(m_n,
-        wait-ms = <0>;
-        tap-ms = <TAPPING_TIME>;
-        bindings = <&kp N>;
-    )
-    ZMK_MACRO(m_e,
-        wait-ms = <0>;
-        tap-ms = <TAPPING_TIME>;
-        bindings = <&kp E>;
-    )
-    ZMK_MACRO(m_i,
-        wait-ms = <0>;
-        tap-ms = <TAPPING_TIME>;
-        bindings = <&kp I>;
-    )
-    ZMK_MACRO(m_o,
-        wait-ms = <0>;
-        tap-ms = <TAPPING_TIME>;
-        bindings = <&kp O>;
-    )
-
-
-macros {
- 
-         ecomma: ecomma {
-        compatible = "zmk,behavior-macro";
-        label = "ecomma";
-        #binding-cells = <0>;
-        wait-ms = <0>;
-        tap-ms = <1>;
-        bindings = <&kp E &kp COMMA>;
-    };
-        sc: sc {
-        compatible = "zmk,behavior-macro";
-        label = "sc";
-        #binding-cells = <0>;
-        wait-ms = <0>;
-        tap-ms = <1>;
-        bindings = <&kp S &kp C>;
-    };
-    capssc: capssc {
-        compatible = "zmk,behavior-macro";
-        label = "capssc";
-        #binding-cells = <0>;
-        wait-ms = <0>;
-        tap-ms = <1>;
-        bindings = <&kp LS(S) &kp C >;
-    };
-    bracket: bracket {
-        compatible = "zmk,behavior-macro";
-        label = "bracket";
-        #binding-cells = <0>;
-        wait-ms = <0>;
-        tap-ms = <1>;
-        bindings = <&kp DE_LEFT_BRACKET &kp DE_RIGHT_BRACKET &kp LEFT >;
-    };
-    brace: brace {
-        compatible = "zmk,behavior-macro";
-        label = "brace";
-        #binding-cells = <0>;
-        wait-ms = <0>;
-        tap-ms = <1>;
-        bindings = <&kp DE_LEFT_BRACE &kp DE_RIGHT_BRACE &kp LEFT >;
-    };
-    paren: paren {
-        compatible = "zmk,behavior-macro";
-        label = "paren";
-        #binding-cells = <0>;
-        wait-ms = <0>;
-        tap-ms = <1>;
-        bindings = <&kp DE_LEFT_PARENTHESIS &kp DE_RIGHT_PARENTHESIS &kp LEFT >;
-    };
-    
-    };
-
-
-
-
-combos {
         /*                KEY POSITIONS
-
   ╭────────────────────╮ ╭────────────────────╮
   │  0   1   2   3   4 │ │  5   6   7   8   9 │
   │ 10  11  12  13  14 │ │ 15  16  17  18  19 │
@@ -172,205 +65,177 @@ combos {
   ╰───────────╮ 30  31 │ │ 32  33 ╭───────────╯
               ╰────────╯ ╰────────╯            */
 
-        compatible = "zmk,combos";
-       
-        combo_pwr {
-            timeout-ms = <50>;
-            key-positions = <0 4>;
-            bindings = <&kp C_POWER>;
-        };
-         combo_back {
-            timeout-ms = <100>;
-            key-positions = <30 31>;
-            bindings = <&kp BSPC>;
-        };
-        combo_quote {
-            timeout-ms = <50>;
-            key-positions = <8 18>;
-            bindings = <&kp LS(N2)>;
-        };
-        combo_apostroph {
-            timeout-ms = <50>;
-            key-positions = <0 10>;
-            bindings = <&kp LS(BACKSLASH)>;
-        };
-        combo_semic {
-            timeout-ms = <50>;
-            key-positions = <6 16>;
-            bindings = <&kp N6>;
-        };
-        combo_double {
-            timeout-ms = <50>;
-            key-positions = <3 13>;
-            bindings = <&kp N5>;
-        };
-        combo_ae {
-            timeout-ms = <25>;
-            key-positions = <10 20>;
-            bindings = <&kp SQT>;
-        };
-        combo_ue {
-            timeout-ms = <25>;
-            key-positions = <7 17>;
-            bindings = <&kp LBKT>;
-        };
-        combo_oe {
-            timeout-ms = <25>;
-            key-positions = <19 29>;
-            bindings = <&kp SEMI>;
-        };
-        combo_up {
-            timeout-ms = <25>;
-            key-positions = <11 12 13>;
-            bindings = <&kp UP>;
-        };
-        combo_right {
-            timeout-ms = <25>;
-            key-positions = <12 13>;
-            bindings = <&kp RIGHT>;
-        };
-        combo_left {
-            timeout-ms = <25>;
-            key-positions = <11 12>;
-            bindings = <&kp LEFT>;
-        };
-        combo_down {
-            timeout-ms = <25>;
-            key-positions = <11 13>;
-            bindings = <&kp DOWN>;
-        };
-        combo_sc {
-            timeout-ms = <25>;
-            key-positions = <12 22>;
-            bindings = <&capSandlowc>;
-        };
-        combo_ecomma {
-            timeout-ms = <25>;
-            key-positions = <17 27>;
-            bindings = <&ecomma>;
-        };
-        combo_bback {
-            timeout-ms = <25>;
-            key-positions = <1 2>;
-            bindings = <&kp C_AC_BACK>;
-        };
-        combo_bforward {
-            timeout-ms = <25>;
-            key-positions = <2 3>;
-            bindings = <&kp C_AC_FORWARD>;
-        };
-        combo_winvindleft {
-            timeout-ms = <25>;
-            key-positions = <13 23>;
-            bindings = <&kp F24>;
-        };
-        combo_winvindright {
-            timeout-ms = <25>;
-            key-positions = <16 26>;
-            bindings = <&kp F23>;
-        };
 
-    };
+ZMK_COMBO(pwr,  &kp C_POWER, 0 4, ALL)
+ZMK_COMBO(f23,  &kp F23, 10 20, ALL)
+ZMK_COMBO(f24,  &kp F24, 19 29, ALL)
+
+ZMK_COMBO(quote,&kp DE_DQT, 8 18, ALL)
+ZMK_COMBO(apostroph,  &kp DE_APOS, 0 10, ALL)
+
+ZMK_COMBO(five,  &kp N5, 3 13, ALL)
+ZMK_COMBO(six,  &kp N6, 6 16, ALL)
+ZMK_COMBO(ae,  &kp DE_A_UMLAUT, 10 17, ALL)
+ZMK_COMBO(ue,  &kp DE_U_UMLAUT, 7 17, ALL)
+ZMK_COMBO(oe,  &kp DE_O_UMLAUT, 17 19, ALL)
 
 
-  behaviors {
+ZMK_COMBO(up,  &kp UP, 11 12 13, ALL,15)
+ZMK_COMBO(down,  &kp DOWN, 11 13, ALL,15)
+ZMK_COMBO(right,  &kp RIGHT, 12 13, ALL,15)
+ZMK_COMBO(left,  &kp LEFT, 11 12, ALL,15)
 
 
-        capSandlowc: capSandlowc {
-            compatible = "zmk,behavior-mod-morph";
-            label = "capSandlowc";
-            #binding-cells = <0>;
-            bindings = <&sc>, <&capssc>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-   
-hma: homerow_modsa {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODSa";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            global-quick-tap;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&m_a>;
-        };
-hmr: homerow_modsr {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODSr";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            global-quick-tap;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&m_r>;
-        };
+ZMK_COMBO(scCombo,  &scModMorph, 12 22, ALL)
+ZMK_COMBO(ecommaCombo,  &ecomma, 17 27, ALL)
 
-hms: homerow_modss {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODSs";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            global-quick-tap;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&m_s>;
-        };
-hmt: homerow_modst {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODSt";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            global-quick-tap;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&m_t>;
-        };
+//home row mods
+ZMK_BEHAVIOR(hm, hold_tap,
+    flavor = "tap-preferred";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <125>;
+    global-quick-tap;
+    bindings = <&kp>, <&kp>;
+)
+ZMK_BEHAVIOR(hma, hold_tap,
+    flavor = "tap-preferred";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <125>;
+    global-quick-tap;
+    bindings = <&kp>, <&amac>;
+)
+ZMK_BEHAVIOR(hmr, hold_tap,
+    flavor = "tap-preferred";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <125>;
+    global-quick-tap;
+    bindings = <&kp>, <&rmac>;
+)
+ZMK_BEHAVIOR(hms, hold_tap,
+    flavor = "tap-preferred";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <125>;
+    global-quick-tap;
+    bindings = <&kp>, <&smac>;
+)
+ZMK_BEHAVIOR(hmt, hold_tap,
+    flavor = "tap-preferred";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <125>;
+    global-quick-tap;
+    bindings = <&kp>, <&tmac>;
+)
+ZMK_BEHAVIOR(hmn, hold_tap,
+    flavor = "tap-preferred";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <125>;
+    global-quick-tap;
+    bindings = <&kp>, <&nmac>;
+)
+ZMK_BEHAVIOR(hme, hold_tap,
+    flavor = "tap-preferred";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <125>;
+    global-quick-tap;
+    bindings = <&kp>, <&emac>;
+)
+ZMK_BEHAVIOR(hmi, hold_tap,
+    flavor = "tap-preferred";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <125>;
+    global-quick-tap;
+    bindings = <&kp>, <&imac>;
+)
+ZMK_BEHAVIOR(hmo, hold_tap,
+    flavor = "tap-preferred";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <125>;
+    global-quick-tap;
+    bindings = <&kp>, <&omac>;
+)
 
-hmn: homerow_modsn {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODSn";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            global-quick-tap;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&m_n>;
-        };
-hme: homerow_modse {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODSe";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            global-quick-tap;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&m_e>;
-        };    
-hmi: homerow_modsi {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODSi";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            global-quick-tap;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&m_i>;
-        };
-hmo: homerow_modso {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODSo";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            global-quick-tap;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&m_o>;
-        };
+//macros
 
     
-hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            global-quick-tap;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
+ZMK_BEHAVIOR(ecomma, macro,
+    wait-ms = <0>;
+    tap-ms = <0>;
+    bindings = <&kp E &kp COMMA>;)
+ZMK_BEHAVIOR(sc, macro,
+    wait-ms = <0>;
+    tap-ms = <0>;
+    bindings = <&kp S &kp C>;)
+ZMK_BEHAVIOR(capitalSlowC, macro,
+    wait-ms = <0>;
+    tap-ms = <0>;
+    bindings = <&kp LS(S) &kp C >;)
+ZMK_BEHAVIOR(bracket, macro,
+    wait-ms = <0>;
+    tap-ms = <0>;
+    bindings = <&kp DE_LEFT_BRACKET &kp DE_RIGHT_BRACKET &kp LEFT >;)
+ZMK_BEHAVIOR(brace, macro,
+    wait-ms = <0>;
+    tap-ms = <0>;
+    bindings = <&kp DE_LEFT_BRACE &kp DE_RIGHT_BRACE &kp LEFT >;)
+ZMK_BEHAVIOR(paren, macro,
+    wait-ms = <0>;
+    tap-ms = <0>;
+    bindings = <&kp DE_LEFT_PARENTHESIS &kp DE_RIGHT_PARENTHESIS &kp LEFT >;)
+ZMK_BEHAVIOR(lessgreater, macro,
+    wait-ms = <0>;
+    tap-ms = <0>;
+    bindings = <&kp DE_LESS_THAN &kp DE_GREATER_THAN &kp LEFT >;)
 
-  };
+ZMK_BEHAVIOR(german, macro,
+    wait-ms = <10>;
+    tap-ms = <10>;
+    bindings = < &kp LS(DE_S) &kp DE_E &kp DE_T &kp DE_MINUS &kp LS(DE_W) &kp DE_I &kp DE_N &kp LS(DE_U) &kp DE_S &kp DE_E &kp DE_R &kp LS(DE_L) &kp DE_A &kp DE_N &kp DE_G &kp DE_U &kp DE_A &kp DE_G &kp DE_E &kp LS(DE_L) &kp DE_I &kp DE_S &kp DE_T &kp DE_SPACE&kp DE_MINUS &kp LS(DE_F) &kp DE_O &kp DE_R &kp DE_C &kp DE_E &kp DE_SPACE&kp DE_D &kp DE_E &kp DE_MINUS &kp LS(DE_D) &kp LS(DE_E) &kp RET &kp DE_S &kp DE_E &kp DE_T &kp DE_X &kp DE_K &kp DE_B &kp DE_M &kp DE_A &kp DE_P &kp DE_SPACE&kp DE_D &kp DE_E &kp RET >;)
+
+
+ ZMK_BEHAVIOR(amac, macro,
+    wait-ms = <0>;
+    tap-ms = <20>;
+    bindings = <&kp A>;)
+     ZMK_BEHAVIOR(rmac, macro,
+    wait-ms = <0>;
+    tap-ms = <20>;
+    bindings = <&kp R>;)
+     ZMK_BEHAVIOR(smac, macro,
+    wait-ms = <0>;
+    tap-ms = <20>;
+    bindings = <&kp S>;)
+     ZMK_BEHAVIOR(tmac, macro,
+    wait-ms = <0>;
+    tap-ms = <20>;
+    bindings = <&kp T>;)
+     ZMK_BEHAVIOR(nmac, macro,
+    wait-ms = <0>;
+    tap-ms = <20>;
+    bindings = <&kp N>;)
+     ZMK_BEHAVIOR(emac, macro,
+    wait-ms = <0>;
+    tap-ms = <20>;
+    bindings = <&kp E>;)
+     ZMK_BEHAVIOR(imac, macro,
+    wait-ms = <0>;
+    tap-ms = <20>;
+    bindings = <&kp I>;)
+     ZMK_BEHAVIOR(omac, macro,
+    wait-ms = <0>;
+    tap-ms = <20>;
+    bindings = <&kp O>;)
+
+
+//mod morph
+ZMK_BEHAVIOR(scModMorph, mod_morph,
+    bindings = <&sc>, <&capitalSlowC>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
+
+/ {
+
+
 
   keymap {
     compatible = "zmk,keymap";
@@ -378,11 +243,11 @@ hm: homerow_mods {
     base_layer {
       bindings = <
         // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-                 &kp Q      &hm ESC W    &hm LSHIFT F    &kp P         &kp B             &kp J          &kp L        &kp U      &hm ESC Z    &kp LC(BSPC)
+                 &kp Q      &hm ESC W    &hm LSHIFT F    &kp P         &kp B             &kp J          &kp L        &kp U       &hm ESC DE_Y  &kp LC(BSPC)
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-            &hma LCTRL A &hmr LGUI R   &hms RET S   &hmt LALT T   &hm MINUS G         &kp M     &hmn RSHFT N  &hme LALT E   &hmi RGUI I   &hmo RCTRL O
+            &hma LCTRL A     &hmr LGUI R   &hms RET S  &hmt LALT T    &hm DE_SZ G         &kp M       &hmn RSHFT N   &hme LALT E   &hmi LGUI I    &hmo RCTRL O
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             &lt NUMPAD Y  &hm LALT X      &kp C      &hm LCTRL D  &hm LA(F4) V        &kp K       &hm RALT H    &kp COMMA     &kp DOT     &kp LS(MINUS)
+          &lt NUMPAD DE_Z   &hm LALT X      &kp C      &hm LCTRL D   &hm LA(F4) V        &kp K       &hm RALT H    &kp COMMA     &kp DOT       &kp BSPC
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
                                                        &lt NAV TAB   &kp LSHFT          &lt SYM SPC   &lt SYM SPC
         //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
@@ -393,9 +258,9 @@ hm: homerow_mods {
     nav_layer {
       bindings = <
         // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-             &mo ADJ      &kp C_PREV     &kp PG_UP      &kp C_NEXT   &kp C_PAUSE           ___        &mkp LCLK    &mmv MOVE_UP   &mkp RCLK     &mkp MCLK
+               &mo ADJ      &kp C_PREV     &kp PG_UP      &kp C_NEXT   &kp K_PLAY_PAUSE           ___        &mkp LCLK    &mmv MOVE_UP   &mkp RCLK     &mkp MCLK
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                 ___        &kp HOME      &kp PG_DN      &kp END         ___          &kp C_BRI_UP &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT   ___
+                 ___        &kp HOME      &kp PG_DN      &kp END      &kp C_MUTE       &kp C_BRI_UP &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT   ___
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                  ___           ___         &kp DEL     &kp C_VOL_DN  &kp C_VOL_UP      &kp C_BRI_DN    &kp F24       &kp F23    &mwh SCROLL_UP &mwh SCROLL_DOWN
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
@@ -407,11 +272,11 @@ hm: homerow_mods {
     sym_layer {
       bindings = <
         // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-               &kp F11       &kp F12   &kp NON_US_HASH &kp NON_US_BACKSLASH &kp DE_CARET &bracket      &brace         &paren     &kp RA(MINUS)     ___
+               &kp F11       &kp F12   &kp DE_HASH &kp DE_LESS_THAN &kp DE_CARET &bracket      &brace         &paren     &kp RA(MINUS)     ___
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-               &hm F1 N1    &hm F2 N2    &hm F3 N3      &hm F4 N4        ___               ___      &hm F7 N7    &hm F8 N8    &hm F9 N9     &hm F10 N0
+               &hm F1 N1    &hm F2 N2    &hm F3 N3      &hm F4 N4        ___             &lessgreater &hm F7 N7     &hm F8 N8    &hm F9 N9     &hm F10 N0
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                 ___           ___           ___        &kp RBKT     &kp MINUS         &kp EQUAL     &kp SLASH         ___           ___           ___
+                 ___           ___           ___        &kp DE_PLUS  &kp DE_QMARK      &kp DE_ACUTE &kp DE_MINUS       ___           ___           ___
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
                                                            ___           ___               ___          ___
         //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
@@ -421,7 +286,7 @@ hm: homerow_mods {
     base_layer_num {
       bindings = <
         // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-                 ___        &hm F7 N7     &hm F8 N8    &hm F9 N9         ___               ___           ___           ___           ___           ___
+                 ___        &hm F7 N7     &hm F8 N8    &hm F9 N9         ___               ___         &german         ___           ___           ___
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                  ___        &hm F4 N4     &hm F5 N5    &hm F6 N6     &hm F10 N0            ___           ___           ___           ___           ___
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
