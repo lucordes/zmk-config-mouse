@@ -75,6 +75,9 @@ ZMK_COMBO(f24,  &kp F24, 19 29, ALL)
 ZMK_COMBO(quote,&kp DE_DQT, 8 18, BASE)
 ZMK_COMBO(apostroph,  &kp DE_APOS, 0 10, BASE)
 
+ZMK_COMBO(quoteus,&kp DQT, 8 18, BASEUS)
+ZMK_COMBO(apostrophus,  &kp APOS, 0 10, BASEUS)
+
 ZMK_COMBO(five,  &kp N5, 3 13, ALL)
 ZMK_COMBO(six,  &kp N6, 6 16, ALL)
 ZMK_COMBO(ae,  &kp DE_A_UMLAUT, 10 17, BASE)
@@ -88,8 +91,8 @@ ZMK_COMBO(right,  &kp RIGHT, 12 13, ALL,15)
 ZMK_COMBO(left,  &kp LEFT, 11 12, ALL,15)
 
 
-ZMK_COMBO(scCombo,  &scModMorph, 12 22, BASE)
-ZMK_COMBO(ecommaCombo,  &ecomma, 17 27, BASE)
+ZMK_COMBO(scCombo,  &scModMorph, 12 22, BASE BASEUS)
+ZMK_COMBO(ecommaCombo,  &ecomma, 17 27, BASE BASEUS)
 
 //home row mods
 ZMK_BEHAVIOR(hm, hold_tap,
@@ -171,6 +174,7 @@ ZMK_BEHAVIOR(capitalSlowC, macro,
     wait-ms = <0>;
     tap-ms = <0>;
     bindings = <&kp LS(S) &kp C >;)
+
 ZMK_BEHAVIOR(bracket, macro,
     wait-ms = <0>;
     tap-ms = <0>;
@@ -187,6 +191,24 @@ ZMK_BEHAVIOR(lessgreater, macro,
     wait-ms = <0>;
     tap-ms = <0>;
     bindings = <&kp DE_LESS_THAN &kp DE_GREATER_THAN &kp LEFT >;)
+
+
+ZMK_BEHAVIOR(bracketus, macro,
+    wait-ms = <0>;
+    tap-ms = <0>;
+    bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT >;)
+ZMK_BEHAVIOR(braceus, macro,
+    wait-ms = <0>;
+    tap-ms = <0>;
+    bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT >;)
+ZMK_BEHAVIOR(parenus, macro,
+    wait-ms = <0>;
+    tap-ms = <0>;
+    bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT >;)
+ZMK_BEHAVIOR(lessgreaterus, macro,
+    wait-ms = <0>;
+    tap-ms = <0>;
+    bindings = <&kp LT &kp GT &kp LEFT >;)
 
 
 
@@ -298,11 +320,11 @@ ZMK_BEHAVIOR(scModMorph, mod_morph,
       symus_layer {
       bindings = <
         // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-            &kp DE_AT   &kp DE_SLASH  &kp DE_HASH &hm DE_EURO DE_DOLLAR &kp DE_CARET     &bracket      &brace         &paren     &kp RA(MINUS)     ___
+               &kp AT       &kp SLASH     &kp HASH     &kp DOLLAR     &kp CARET         &bracketus    &braceus     &parenus     &kp BACKSLASH     ___
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-               &hm F1 N1    &hm F2 N2    &hm F3 N3      &hm F4 N4    &kp DE_AMPS       &lessgreater &hm F7 N7     &hm F8 N8    &hm F9 N9     &hm F10 N0
+               &hm F1 N1    &hm F2 N2    &hm F3 N3      &hm F4 N4    &kp AMPS        &lessgreaterus &hm F7 N7     &hm F8 N8    &hm F9 N9     &hm F10 N0
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             &kp DE_EQUAL  &kp DE_PERCENT &kp DE_QMARK &kp DE_PLUS  &kp DE_EXCL      &kp DE_ACUTE &hm DE_PIPE DE_MINUS ___           ___           ___
+             &kp EQUAL     &kp PERCENT    &kp QMARK     &kp PLUS      &kp EXCL           &kp GRAVE  &hm PIPE MINUS     ___           ___           ___
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
                                                            ___           ___               ___          ___
         //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
