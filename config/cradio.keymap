@@ -51,10 +51,12 @@
 #define ___ &trans
 
 #define BASE 0
-#define NAV 1
-#define SYM 2
-#define NUMPAD 3 
-#define ADJ 4
+#define BASEUS 1
+#define NAV 2
+#define SYM 3
+#define SYMUS 4
+#define NUMPAD 5
+#define ADJ 6
 
 
         /*                KEY POSITIONS
@@ -70,14 +72,14 @@ ZMK_COMBO(pwr,  &kp C_POWER, 0 4, ALL)
 ZMK_COMBO(f23,  &kp F23, 10 20, ALL)
 ZMK_COMBO(f24,  &kp F24, 19 29, ALL)
 
-ZMK_COMBO(quote,&kp DE_DQT, 8 18, ALL)
-ZMK_COMBO(apostroph,  &kp DE_APOS, 0 10, ALL)
+ZMK_COMBO(quote,&kp DE_DQT, 8 18, BASE)
+ZMK_COMBO(apostroph,  &kp DE_APOS, 0 10, BASE)
 
 ZMK_COMBO(five,  &kp N5, 3 13, ALL)
 ZMK_COMBO(six,  &kp N6, 6 16, ALL)
-ZMK_COMBO(ae,  &kp DE_A_UMLAUT, 10 17, ALL)
-ZMK_COMBO(ue,  &kp DE_U_UMLAUT, 7 17, ALL)
-ZMK_COMBO(oe,  &kp DE_O_UMLAUT, 17 19, ALL)
+ZMK_COMBO(ae,  &kp DE_A_UMLAUT, 10 17, BASE)
+ZMK_COMBO(ue,  &kp DE_U_UMLAUT, 7 17, BASE)
+ZMK_COMBO(oe,  &kp DE_O_UMLAUT, 17 19, BASE)
 
 
 ZMK_COMBO(up,  &kp UP, 11 12 13, ALL,15)
@@ -86,8 +88,8 @@ ZMK_COMBO(right,  &kp RIGHT, 12 13, ALL,15)
 ZMK_COMBO(left,  &kp LEFT, 11 12, ALL,15)
 
 
-ZMK_COMBO(scCombo,  &scModMorph, 12 22, ALL)
-ZMK_COMBO(ecommaCombo,  &ecomma, 17 27, ALL)
+ZMK_COMBO(scCombo,  &scModMorph, 12 22, BASE)
+ZMK_COMBO(ecommaCombo,  &ecomma, 17 27, BASE)
 
 //home row mods
 ZMK_BEHAVIOR(hm, hold_tap,
@@ -186,10 +188,6 @@ ZMK_BEHAVIOR(lessgreater, macro,
     tap-ms = <0>;
     bindings = <&kp DE_LESS_THAN &kp DE_GREATER_THAN &kp LEFT >;)
 
-ZMK_BEHAVIOR(german, macro,
-    wait-ms = <10>;
-    tap-ms = <10>;
-    bindings = < &kp LS(DE_S) &kp DE_E &kp DE_T &kp DE_MINUS &kp LS(DE_W) &kp DE_I &kp DE_N &kp LS(DE_U) &kp DE_S &kp DE_E &kp DE_R &kp LS(DE_L) &kp DE_A &kp DE_N &kp DE_G &kp DE_U &kp DE_A &kp DE_G &kp DE_E &kp LS(DE_L) &kp DE_I &kp DE_S &kp DE_T &kp DE_SPACE&kp DE_MINUS &kp LS(DE_F) &kp DE_O &kp DE_R &kp DE_C &kp DE_E &kp DE_SPACE&kp DE_D &kp DE_E &kp DE_MINUS &kp LS(DE_D) &kp LS(DE_E) &kp RET &kp DE_S &kp DE_E &kp DE_T &kp DE_X &kp DE_K &kp DE_B &kp DE_M &kp DE_A &kp DE_P &kp DE_SPACE&kp DE_D &kp DE_E &kp RET >;)
 
 
  ZMK_BEHAVIOR(amac, macro,
@@ -253,6 +251,20 @@ ZMK_BEHAVIOR(scModMorph, mod_morph,
         //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
       >;
     };
+
+    baseus_layer {
+      bindings = <
+        // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+                 ___           ___           ___           ___           ___               ___           ___           ___       &hm ESC Y         ___
+        // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+                 ___           ___           ___           ___           ___               ___           ___           ___           ___           ___
+        // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+            &lt NUMPAD Z       ___           ___           ___           ___               ___           ___           ___           ___           ___
+        // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
+                                                           ___           ___           &lt SYMUS SPC     ___
+        //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
+      >;
+    };
       
 
     nav_layer {
@@ -283,10 +295,24 @@ ZMK_BEHAVIOR(scModMorph, mod_morph,
       >;
     };
 
+      symus_layer {
+      bindings = <
+        // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+            &kp DE_AT   &kp DE_SLASH  &kp DE_HASH &hm DE_EURO DE_DOLLAR &kp DE_CARET     &bracket      &brace         &paren     &kp RA(MINUS)     ___
+        // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+               &hm F1 N1    &hm F2 N2    &hm F3 N3      &hm F4 N4    &kp DE_AMPS       &lessgreater &hm F7 N7     &hm F8 N8    &hm F9 N9     &hm F10 N0
+        // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+             &kp DE_EQUAL  &kp DE_PERCENT &kp DE_QMARK &kp DE_PLUS  &kp DE_EXCL      &kp DE_ACUTE &hm DE_PIPE DE_MINUS ___           ___           ___
+        // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
+                                                           ___           ___               ___          ___
+        //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
+      >;
+    };
+
     base_layer_num {
       bindings = <
         // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-               &kp F12      &hm F7 N7     &hm F8 N8    &hm F9 N9         ___               ___         &german         ___           ___           ___
+               &kp F12      &hm F7 N7     &hm F8 N8    &hm F9 N9         ___               ___           ___           ___           ___           ___
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                &kp F11      &hm F4 N4     &hm F5 N5    &hm F6 N6     &hm F10 N0            ___           ___           ___           ___           ___
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
